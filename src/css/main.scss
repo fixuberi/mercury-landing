@@ -1,4 +1,258 @@
+//Roboto 400  - header navigation, login button, motto, infographic text , requiremments text, regular text
+// Roboto 700 - regular button, infographic tittle, price
+// Roboto 500 - drag'n'drop tittles,
+//Roboto - Thin 400 - main tittle - H2
+
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap/scss/_functions";
 @import "~bootstrap/scss/_variables";
 @import "~bootstrap/scss/mixins/_breakpoints";
+@import "~@fortawesome/fontawesome-free/css/solid.min.css";
+
+body {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 400;
+  font-size: 18px;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 3.333em;
+  margin: 0;
+  &.light {
+    color: #ffffff;
+  }
+  &.dark {
+    color: #0e1a35;
+  }
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 2em;
+  margin: 0;
+  color: #8492af;
+  margin-top: 0.5em;
+  margin-bottom: 2.222em;
+}
+
+h4 {
+  font-size: 1.333em;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  margin: 0;
+}
+
+p {
+  color: #8492af;
+  margin: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0e1a35;
+}
+
+.icon {
+  background: white;
+}
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 24px;
+  height: 48px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &__login {
+    padding: 0.5em 2em;
+    background: transparent;
+    border: 1px solid rgba(85, 132, 255, 0.3);
+    color: #5584ff;
+    font-weight: 400;
+    letter-spacing: 0.24px;
+  }
+  &__signup {
+    background-color: #5584ff;
+    color: #ffffff;
+    padding: 0.5em 3.05em;
+  }
+  &__opportunity {
+    border: 1px solid rgba(132, 146, 175, 0.3);
+    background-color: transparent;
+    padding: 0.5em 4.72em;
+    color: #0e1a35;
+  }
+}
+
+.header {
+  height: 830px;
+  padding-top: 3.61em;
+  padding-bottom: 11.11em;
+  position: relative;
+  box-sizing: content-box;
+
+  &__nav {
+    width: 80%;
+    margin: 0 auto;
+    .navbar {
+      padding-bottom: 8.11em;
+    }
+
+    .navbar-collapse {
+      justify-content: flex-end;
+
+      .nav-item {
+        margin-right: 2.7em;
+        .nav-link {
+          color: white;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+  &__tittle {
+    text-align: center;
+    margin-bottom: 4.88em;
+  }
+  &__picture {
+    text-align: center;
+    .picture-container {
+      img {
+        width: 100%;
+        max-width: 882px;
+      }
+    }
+  }
+}
+@include media-breakpoint-down(lg) {
+  .header {
+    padding-top: 0.5em;
+  }
+  .show,
+  .collapsing {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    .navbar-nav {
+      font-size: 1.5em;
+      flex-direction: row;
+      justify-content: space-around;
+      li.nav-item {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.opportunities {
+  padding-top: 14.444em;
+  .opportunity {
+    text-align: center;
+    padding-bottom: 3.33em;
+    &__image {
+      height: 80px;
+      margin-bottom: 3.33em;
+    }
+    &__text {
+      padding-top: 1.555em;
+      padding-bottom: 2.888em;
+    }
+    &-maximized {
+      .additional-text {
+        display: inline;
+      }
+      .button__opportunity {
+        &:after {
+          content: "Hide";
+        }
+      }
+    }
+    &-minimized {
+      .additional-text {
+        display: none;
+      }
+      .button__opportunity {
+        &:after {
+          content: "See more";
+        }
+      }
+    }
+  }
+}
+
+.requirements {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 7.777em 0;
+
+  &__picture {
+    width: 50%;
+    overflow: hidden;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 32%;
+    margin-right: 4%;
+    p {
+      padding: 3.33em 0;
+    }
+  }
+  &__list {
+    list-style: none;
+    color: #5584ff;
+    font-size: 1.222em;
+    padding: 0;
+    margin: 0;
+    li span::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f058";
+      padding-right: 1em;
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .requirements {
+    justify-content: center;
+    &__picture {
+      display: none;
+    }
+    &__content {
+      width: 80%;
+      margin: 0;
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}

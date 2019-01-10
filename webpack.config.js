@@ -35,7 +35,6 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
-                exclude: /node_modules/,
                 loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
             }
         ]
