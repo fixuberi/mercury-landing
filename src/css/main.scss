@@ -13,6 +13,7 @@ body {
   font-family: "Roboto", "sans-serif";
   font-weight: 400;
   font-size: 18px;
+  background: #f6f7fa;
 }
 
 h2 {
@@ -46,6 +47,11 @@ h4 {
 p {
   color: #8492af;
   margin: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 .overlay {
@@ -605,3 +611,91 @@ p {
   }
 }
 // MOCKUP SECTION END
+
+// PRICE SECTION START 
+.price-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1360px;
+  padding-bottom: 100px;
+  &__tittle {
+    text-align: center;
+  }
+  &__plans {
+    width: 100%;
+    padding: 90px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__text {
+    width: 64%;
+    text-align: center;
+    padding-bottom: 67px;
+  }
+  .plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.45% 2.75vw;
+    box-shadow: 0 0 15px 3px rgba(208, 209, 211, 0.6);
+    &__tittle {
+      font-size: 24px;
+      letter-spacing: 0.48px;
+    }
+    &__value {
+      font-size: 72px;
+      font-weight: 700;
+      letter-spacing: 1.44px;
+      &::before {
+        content: '$';
+        font-size: 40px;
+        font-weight: 700;
+      }
+      &::after {
+        content: '/mon';
+        font-size: 24px;
+        font-weight: 400;
+        color: #8492af;
+        letter-spacing: 0.48px;
+      }
+    }
+    &__services {
+      li {
+        display: flex;
+        align-items: center;
+      }
+      .service::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 1.5em;
+        padding-right: 14px;
+      }
+      .service-included::before {
+        content: '\f058';
+        color: #5284ff;
+      }
+      .service-notIncluded::before {
+        content: '\f057';
+        color: #fa6697;
+      }
+    }
+  }
+}
+@media (max-width: 1400px) {
+  .price__plans {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 1023px) {
+  .price .plan {
+    padding: 3.45% 5.37%;
+    margin: 2.6% 2.6%;
+  }
+}
+// PRICE SECTION END
