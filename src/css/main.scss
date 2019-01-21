@@ -8,6 +8,7 @@
 @import "~bootstrap/scss/_variables";
 @import "~bootstrap/scss/mixins/_breakpoints";
 @import "~@fortawesome/fontawesome-free/css/solid.min.css";
+@import '~@fortawesome/fontawesome-free/css/brands.min.css';
 
 body {
   font-family: "Roboto", "sans-serif";
@@ -699,3 +700,85 @@ ul {
   }
 }
 // PRICE SECTION END
+
+// FOOTER SECTION START 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 152px;
+  background-color: #0e1a35;
+  color: #8492af;
+  .footer-wrapper {
+    width: 73%;
+    display: flex;
+    justify-content: space-between;
+    .copyright {
+      display: block;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    li {
+      margin-right: 2.777em;
+      &:last-child  {
+        margin: 0;
+      }
+    }
+    a {
+      color: #8492af;
+      &:hover {
+        opacity: 0.6;
+        text-decoration: none;
+      }
+    }
+    .social {
+      font-family: "Font Awesome 5 Brands";
+      font-weight: 900;
+      font-size: 1em;
+      padding-right: 1em;
+      color: #8492af;
+      &:last-child {
+        padding: 0;
+      }
+      &-face::before {
+        content: '\f39e';
+      }
+      &-twitter::before {
+        content: '\f099';
+      }
+      &-gplus::before {
+        content: '\f0d5';
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  footer .footer-wrapper {
+    // width: 90%;
+    height: 50%;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    .copyright {
+      font-size: 0.8em;
+    }
+    li {
+      padding-bottom: 0.8em;
+      &:nth-child(-n+3) {
+        margin-right: 16%;
+      }
+      &:nth-child(n+3)  {
+        margin: 0;
+      }
+      &:last-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
