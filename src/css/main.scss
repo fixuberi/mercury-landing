@@ -63,6 +63,32 @@ ul {
   height: 100%;
   background-color: #0e1a35;
   z-index: -1;
+  &-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    .grid-mask {
+      width: 100%;
+      height: 100%;
+      clip-path: ellipse(38vw 450px at center);
+      background-image: url("../img/grid.svg");
+      .grid {
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(transparent 30%, rgba(14, 26, 53, 0.9) 57%);
+      }
+    }
+    .spline {
+      position: absolute;
+      top: 20%;
+      img {
+        width: 2000px;
+      }
+    }
+  }
 }
 
 .icon {
@@ -284,6 +310,14 @@ ul {
     display: flex;
     justify-content: space-between;
     width: 41.8vw;
+  }
+  .overlay {
+    .grid-mask {
+      clip-path: ellipse(47vw 450px at center);
+      .grid {
+        background-image: radial-gradient(transparent 30%, rgba(14, 26, 53, 0.9) 80%);
+      }
+    }
   }
   .dropdown {
     background: transparent;
