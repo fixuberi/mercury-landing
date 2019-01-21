@@ -14,7 +14,6 @@ body {
   font-family: "Roboto", "sans-serif";
   font-weight: 400;
   font-size: 18px;
-  background: #f6f7fa;
 }
 
 h2 {
@@ -204,6 +203,29 @@ ul {
     }
   }
 }
+@media (max-width: 600px) {
+  .header__nav {
+    width:  90%;
+    .navbar-brand{
+      width: 50%;
+      img {
+        width: 100%
+      }
+    }
+  }
+  .show .navbar-nav, .collapsing .navbar-nav {
+    font-size: 1.1em;
+  }
+  .button {
+    height: initial;
+    &__login {
+      padding: 0.5em 0.25em;
+      border: none;
+      color: white;
+      font-size: 24px;
+    }
+  }
+}
 //HEADER SECTION END
 
 //OPPORTUNITIES SECTION START
@@ -250,7 +272,7 @@ ul {
   display: flex;
   justify-content: flex-end;
   padding: 7.777em 0;
-
+  background-image: linear-gradient(to top, #f6f7fa 80%, transparent);
   &__picture {
     width: 50%;
     overflow: hidden;
@@ -524,6 +546,7 @@ ul {
 .mockup-wrapper {
   display: flex;
   justify-content: center;
+  background-image: linear-gradient(to  bottom, #f6f7fa 90%,  transparent);
 }
 .mockup {
   padding: 100px 0;
